@@ -34,19 +34,25 @@ Video: https://www.youtube.com/watch?v=-MheUh0hjFc
 
 #How can i change imagepatch?
 *  Open app.js and look at first line
+
 ![image](https://github.com/mb-later/CAS-Market/assets/68826839/db91b117-8dbf-416b-9688-480d60a5f553)
+
 * and change it according to your inventory.
 
 #I show you how to change the function to add items to your own inventory
 
 * First open server/server_hook.lua and find this;
+
 ![image](https://github.com/mb-later/CAS-Market/assets/68826839/152e1f65-6e8a-48af-9367-edf91bf3f71e)
+
 * then edit functions according to your inventory exports/functions.
 
 
 #How can i change notify export?
 * First open client_hook.lua and find this;
+
 ![image](https://github.com/mb-later/CAS-Market/assets/68826839/d35852ea-ce2c-47ff-92e2-ee36c37803a3)
+
 * Change it according to your notify script’s export/function.
 
 
