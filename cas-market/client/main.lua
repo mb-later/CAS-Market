@@ -1,17 +1,15 @@
 
 
-local pedCreated = false
-
 Citizen.CreateThread(function()
-    local pedCoords = CAS.PedCoords
-    if not pedCreated then
-
+    if CAS.Ped == nil then
+        local pedCoords = CAS.PedCoords
         local pedHash = GetHashKey(CAS.PedHash) 
         RequestModel(pedHash)
         while not HasModelLoaded(pedHash) do
             Wait(1)
         end
-        local ped = CreatePed(1, pedHash, pedCoords.x, pedCoords.y, pedCoords.z-0.98, pedCoords.a, true, false)
+        CAS.Ped = CreatePed(1, pedHash, pedCoords.x, pedCoords.y, pedCoords.z-0.98, pedCoords.a, true, false)
+
         SetPedDefaultComponentVariation(ped)
         SetPedRandomProps(ped)
         SetPedRandomComponentVariation(ped, true)
@@ -19,7 +17,6 @@ Citizen.CreateThread(function()
         FreezeEntityPosition(ped, true)
         SetEntityInvincible(ped, true)
         SetBlockingOfNonTemporaryEvents(ped, true)
-        pedCreated = true
     end
     while true do
         local sleep = 750
@@ -36,7 +33,6 @@ Citizen.CreateThread(function()
         Citizen.Wait(sleep)
     end
 end)
-
 
 CASFunctions = {
     DisplayUI = function()
