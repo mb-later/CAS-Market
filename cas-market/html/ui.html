@@ -1,0 +1,188 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue@next"></script>
+    <link rel="stylesheet" href="app.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+    <script src="app.js"></script>
+</head>
+
+
+
+<body>
+    <div class="back-container" style="display: none;">
+        <div class="main-container" style="display: none;">
+            <div class="left-container">
+                <div class="header-div">
+                    <div class="search-bar">
+                        <svg id="svg" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.5215 12.2468L10.9782 9.71106C11.7988 8.66568 12.244 7.37476 12.2424 6.0458C12.2424 4.86226 11.8914 3.7053 11.2339 2.72122C10.5763 1.73714 9.64173 0.970143 8.54828 0.517221C7.45483 0.0642993 6.25163 -0.0542057 5.09083 0.176692C3.93003 0.40759 2.86376 0.977519 2.02687 1.81441C1.18998 2.6513 0.620053 3.71756 0.389155 4.87837C0.158258 6.03917 0.276763 7.24237 0.729685 8.33582C1.18261 9.42927 1.9496 10.3639 2.93368 11.0214C3.91776 11.6789 5.07473 12.0299 6.25827 12.0299C7.58723 12.0316 8.87814 11.5863 9.92353 10.7658L12.4593 13.309C12.5288 13.3791 12.6116 13.4348 12.7027 13.4727C12.7939 13.5107 12.8916 13.5303 12.9904 13.5303C13.0891 13.5303 13.1869 13.5107 13.278 13.4727C13.3692 13.4348 13.4519 13.3791 13.5215 13.309C13.5916 13.2395 13.6472 13.1567 13.6852 13.0656C13.7232 12.9744 13.7427 12.8767 13.7427 12.7779C13.7427 12.6792 13.7232 12.5814 13.6852 12.4902C13.6472 12.3991 13.5916 12.3164 13.5215 12.2468ZM1.7702 6.0458C1.7702 5.15815 2.03342 4.29043 2.52657 3.55237C3.01973 2.81431 3.72067 2.23906 4.54076 1.89937C5.36084 1.55968 6.26325 1.4708 7.13385 1.64397C8.00445 1.81714 8.80414 2.24459 9.43181 2.87226C10.0595 3.49993 10.4869 4.29962 10.6601 5.17022C10.8333 6.04083 10.7444 6.94323 10.4047 7.76331C10.065 8.5834 9.48977 9.28434 8.75171 9.7775C8.01365 10.2707 7.14592 10.5339 6.25827 10.5339C5.06796 10.5339 3.9264 10.061 3.08472 9.21935C2.24305 8.37767 1.7702 7.23611 1.7702 6.0458Z" fill="#8C8C8C"/>
+                        </svg>
+                        <input class="searchBar-input" type="text" placeholder="Search anything...">
+                    </div>
+                        <div class="action-bar">
+                        <button class="action" data-target="weapon">
+                            <svg width="32" height="20" viewBox="0 0 32 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M31.2044 16.2661L31.1954 16.26C30.8021 14.8421 29.4638 12.7526 28.8201 11.747C28.6502 11.4754 28.5044 11.2432 28.4792 11.1979C28.4572 11.1426 28.424 11.0893 28.3858 11.0511H28.3937C28.6502 11.0511 28.8372 10.9807 28.9136 10.848C28.9688 10.7635 28.9688 10.6629 28.9217 10.5624H28.9136C27.8225 8.60559 27.5963 8.16307 27.8829 7.18066C28.1242 6.35309 29.524 6.17399 30.0519 6.11272C30.1424 6.10366 30.2138 6.09763 30.253 6.08242C30.3847 6.05134 30.4924 5.93473 30.5304 5.77977C30.5847 5.5707 30.5003 5.34743 30.2911 5.16139C30.0357 4.94427 29.725 4.89094 29.5097 4.89094C29.4163 4.89094 29.3448 4.90491 29.3227 4.90491C29.2925 4.91296 29.2603 4.91296 29.2383 4.92112C29.1306 4.82866 28.9135 4.74414 28.4408 4.68779C27.6896 4.58817 27.4895 3.86727 27.4815 3.76664C27.4821 3.75547 27.4805 3.74429 27.4767 3.73376C27.4729 3.72324 27.467 3.71358 27.4594 3.70538C27.4424 3.29606 27.3739 2.91594 27.2804 2.56007C27.3789 2.02699 28.1632 1.59263 28.6027 1.35326C28.7817 1.25287 28.8671 1.20647 28.8974 1.16834C28.9356 1.1291 28.9356 1.07376 28.9135 1.02054C28.8583 0.903928 28.6501 0.803304 28.4489 0.803304C28.3333 0.803304 28.1715 0.834498 28.0396 0.982413C27.7118 1.33839 27.2553 1.39161 27.016 1.39161C26.9396 1.39161 26.8843 1.38368 26.846 1.38368C26.8158 1.31536 26.7857 1.25298 26.7524 1.19059L26.7304 1.1443H26.6289C26.4449 0.780273 26.296 0.564159 26.296 0.564159H25.1054C25.1054 0.541015 25.1134 0.455485 25.0421 0.370068C25.0199 0.331831 24.9817 0.30075 24.9184 0.261395C24.6963 0.122648 24.6963 0 24.6963 0H24.471C24.4539 0.152835 24.3301 0.24742 24.3301 0.24742C24.2698 0.277607 24.2226 0.323781 24.1843 0.370068C24.1211 0.455597 24.0828 0.541015 24.0767 0.564159H18.2704V0.672719H2.38319C2.14997 0.641637 2.05639 0.47874 1.88545 0.370068C1.83135 0.337461 1.77223 0.314039 1.71047 0.30075C1.58581 0.269557 1.46205 0.308688 1.35248 0.370068C1.16845 0.47874 1.02769 0.641637 1.00656 0.672719H0.80241C0.678756 0.672719 0.602282 0.85071 0.555102 1.03574C0.363024 1.03574 0.261507 1.1907 0.214215 1.3214H0.184027C0.0764728 1.35349 0 1.67134 0 2.05047C0 2.42154 0.0684231 2.71614 0.16994 2.76958V2.83991C0.16994 2.83991 0.40126 3.4735 0.345918 4.2095H0.354974V4.26372C0.285656 5.02197 0.486678 5.16888 0.486678 5.16888H0.618494C0.632581 5.47857 0.686805 5.67154 0.887939 5.67154H6.4308V5.83444C6.4308 5.83444 6.53835 6.09796 6.81082 6.09796H12.065C12.249 6.09796 12.4139 6.1211 12.5597 6.15129C12.7599 6.19053 12.9469 6.26891 13.1178 6.36852C13.14 6.38351 13.1641 6.39961 13.1863 6.41571C13.5745 6.66916 13.8439 7.09547 13.8439 7.69887C13.8439 8.99198 14.5799 9.86594 15.677 9.86594H18.4403C19.3092 9.86594 20.2062 9.94432 20.8245 10.8484C21.4902 11.8168 23.4089 18.5894 23.434 18.6586L23.4501 18.728H23.5658C23.4642 18.7662 23.3104 18.8125 23.0931 18.8366C22.9856 18.8678 22.9473 19.0678 23.1474 19.0678C23.3233 19.0678 23.7115 18.9684 23.9368 18.9452L23.9841 19.0367L30.5003 18.0169L30.5385 17.9698C30.7396 17.9617 30.9568 17.9154 31.1016 17.7444C31.3061 17.5129 31.3362 17.1026 31.2044 16.2661ZM14.385 7.63726V7.6291C14.4323 6.93324 15.1362 6.3209 15.5315 6.3209H17.3112C17.4431 6.50001 17.792 7.05701 17.7617 7.86143C17.7285 8.75831 17.3907 9.13856 17.2197 9.31744H15.7103C15.3916 9.31744 15.0125 9.12346 14.751 8.8207C14.4625 8.49703 14.3328 8.07061 14.385 7.63726ZM0.602506 4.20916L0.59345 3.7909H0.602506V3.89947H0.618606V4.70501L0.610556 4.20916H0.602506Z" fill="#C2C3C3"/></svg>
+                                
+                        </button>
+                        <button class="action" data-target="ammo">
+                            <svg width="14" height="32" viewBox="0 0 14 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.54175 30.1747H12.3134V29.7598H6.54175V30.1747ZM5.76715 31.1473H13.0985V30.3271H5.76715V31.1473ZM11.7015 9.64557H7.14514V9.80727H11.7015V9.64557ZM11.7109 9.36661C11.7109 9.36661 11.4226 3.18846 9.89682 0.74493C9.79714 0.572812 9.61785 0.481346 9.4258 0.481346C9.23713 0.481346 9.05785 0.572812 8.95818 0.74493C7.44286 3.18846 7.14527 9.36661 7.14527 9.36661H11.7109ZM11.8364 9.89873H7.02918V14.6705H11.8364V9.89873ZM12.611 16.3557L11.8364 14.9414H7.02918L6.24402 16.3557H12.611ZM6.45849 29.6591H12.3964C12.4687 29.6593 12.5404 29.6448 12.607 29.6165C12.6737 29.5883 12.7339 29.5469 12.7841 29.4948C12.8344 29.4427 12.8736 29.381 12.8993 29.3134C12.9251 29.2458 12.937 29.1736 12.9342 29.1013L12.611 16.5643H6.24402L5.92767 29.1013C5.92063 29.4084 6.16428 29.6591 6.45849 29.6591ZM0.858062 30.2193H4.56597V29.8314H0.858062V30.2193ZM0.355257 31.1473H5.07203V30.373H0.355257V31.1473ZM4.09717 12.1535H1.33846V12.3081H4.09717V12.1535ZM4.09717 11.8651C4.09717 11.8651 3.95306 6.5894 3.03306 4.52215C3.00595 4.46081 2.96161 4.40867 2.90543 4.37205C2.84925 4.33544 2.78364 4.31593 2.71658 4.3159C2.57247 4.3159 2.44713 4.39798 2.39319 4.52215C1.47318 6.5894 1.33846 11.8651 1.33846 11.8651H4.09717ZM4.26121 12.3973H1.16504V16.474H4.26121V12.3973ZM4.76388 18.0434L4.26121 16.698H1.16516L0.669397 18.0434H4.76388ZM0.851027 29.7248H4.5846C4.80258 29.7248 4.97262 29.543 4.97262 29.3262L4.76388 18.2061H0.669266L0.464182 29.3262C0.453628 29.543 0.634218 29.7248 0.851027 29.7248Z" fill="#515153"/></svg>
+                                
+                        </button>
+                        <button class="action" data-target="other">
+                            <svg width="26" height="22" viewBox="0 0 26 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M23.8333 7.33333H1.83333V19.25C1.83333 19.9797 2.123 20.6791 2.63908 21.1943C3.15425 21.7103 3.85367 22 4.58333 22C8.41867 22 17.248 22 21.0833 22C21.813 22 22.5124 21.7103 23.0276 21.1943C23.5437 20.6791 23.8333 19.9797 23.8333 19.25V7.33333ZM10.0833 11H15.5833C16.0893 11 16.5 10.5893 16.5 10.0833C16.5 9.57733 16.0893 9.16667 15.5833 9.16667H10.0833C9.57733 9.16667 9.16667 9.57733 9.16667 10.0833C9.16667 10.5893 9.57733 11 10.0833 11ZM1.83333 5.5H23.8333C24.8463 5.5 25.6667 4.67958 25.6667 3.66667V1.83333C25.6667 0.820417 24.8463 0 23.8333 0C20.0438 0 5.62283 0 1.83333 0C0.820417 0 0 0.820417 0 1.83333V3.66667C0 4.67958 0.820417 5.5 1.83333 5.5Z" fill="#515153"/></svg>
+                                
+                        </button>
+                        <button class="action active" data-target="all">
+                            <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.331055" y="0.772339" width="9.68289" height="9.68289" rx="2.31676" fill="#D9D9D9" fill-opacity="0.26"/><rect x="13.2417" y="0.772156" width="9.68289" height="9.68289" rx="2.31676" fill="#D9D9D9" fill-opacity="0.26"/><rect x="13.2417" y="14.2207" width="9.68289" height="9.68289" rx="2.31676" fill="#D9D9D9" fill-opacity="0.26"/><rect x="0.331055" y="14.2207" width="9.68289" height="9.68289" rx="2.31676" fill="#D9D9D9" fill-opacity="0.26"/></svg>  
+                        </button>
+                    </div>
+                </div>
+                <div class="item-body">
+                    <div class="itemBox">
+                        <div class="img-box">
+                            <img src="images/weapon_flashlight.png">
+                        </div>
+                        <div class="item-name">Flashlight</div>
+                        <div class="button-container">
+                            <button class="addToCart">
+                                Add To Cart
+                            </button>
+                            <div class="priceofItem">$10</div>
+                        </div>
+                    </div>
+                    <div class="itemBox">
+                        <div class="img-box">
+                            <img src="images/weapon_golfclub.png">
+                        </div>
+                        <div class="item-name">Golf Club</div>
+                        <div class="button-container">
+                            <button class="addToCart">
+                                Add To Cart
+                            </button>
+                            <div class="priceofItem">$10</div>
+                        </div>
+                    </div>
+                    <div class="itemBox">
+                        <div class="img-box">
+                            <img src="images/weapon_hammer.png">
+                        </div>
+                        <div class="item-name">Hammer</div>
+                        <div class="button-container">
+                            <button class="addToCart">
+                                Add To Cart
+                            </button>
+                            <div class="priceofItem">$10</div>
+                        </div>
+                    </div>
+                    <div class="itemBox">
+                        <div class="img-box">
+                            <img src="images/weapon_heavypistol.png">
+                        </div>
+                        <div class="item-name">Heavy Pistol</div>
+                        <div class="button-container">
+                            <button class="addToCart">
+                                Add To Cart
+                            </button>
+                            <div class="priceofItem">$10</div>
+                        </div>
+                    </div>
+                    <div class="itemBox">
+                        <div class="img-box">
+                            <img src="images/weapon_microsmg.png">
+                        </div>
+                        <div class="item-name">Micro SMG</div>
+                        <div class="button-container">
+                            <button class="addToCart">
+                                Add To Cart
+                            </button>
+                            <div class="priceofItem">$10</div>
+                        </div>
+                    </div>
+                    <div class="itemBox">
+                        <div class="img-box">
+                            <img src="images/weapon_machete.png">
+                        </div>
+                        <div class="item-name">Machete</div>
+                        <div class="button-container">
+                            <button class="addToCart">
+                                Add To Cart
+                            </button>
+                            <div class="priceofItem">$10</div>
+                        </div>
+                    </div>
+                    <div class="itemBox">
+                        <div class="img-box">
+                            <img src="images/weapon_knife.png">
+                        </div>
+                        <div class="item-name">Knife</div>
+                        <div class="button-container">
+                            <button class="addToCart">
+                                Add To Cart
+                            </button>
+                            <div class="priceofItem">$10</div>
+                        </div>
+                    </div>
+                    <div class="itemBox">
+                        <div class="img-box">
+                            <img src="images/weapon_heavyshotgun.png">
+                        </div>
+                        <div class="item-name">Heavy Shotgun</div>
+                        <div class="button-container">
+                            <button class="addToCart">
+                                Add To Cart
+                            </button>
+                            <div class="priceofItem">$10</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-container">
+                <div class="header-right">
+                    <h1 class="header-top">YOUR CART</h1>
+                    <p class="footer-top">Your cart details in the box.</p>
+                </div>
+                <div class="right-body">
+                    <div class="shopcart">
+                        <!-- <div class="shopItem">
+                            <div class="shopItem-left">
+                                <div class="shopItem-img">
+                                    <img src="images/weapon_golfclub.png">
+                                </div>
+                                <div class="shopItem-info">
+                                    <div class="shopItem-name">Golfclub</div>
+                                    <div class="shopItem-price">10$</div>
+                                </div>
+                            </div>
+                            <div class="shopItem-right">
+                                <button class="countDown act-btn">-</button>
+                                <div class="currentCount act-btn">x3</div>
+                                <button class="countUp act-btn">+</button>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="right-altBody">
+                        <div class="total-div">
+                            <div class="total-text">
+                                Total Price:
+                            </div>
+                            <div class="total-price">
+                                $0.00
+                            </div>
+                        </div>
+                        <div class="shopping-act-div">
+                            <div class="left-btn-cont">
+                                <button class="pay paywithcard">Pay With Card</button>
+                            </div>
+                         
+                            <div class="right-btn-cont">
+                                <button class="pay paywithcash">Pay With Cash</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+</body>
