@@ -9,10 +9,9 @@ GetPlayer = function(playerId)
     if CAS.Framework == "qb" then
         return QBCore.Functions.GetPlayer(playerId)
     else
-        return ESX.GetPlayerFromId(player)
+        return ESX.GetPlayerFromId(playerId)
     end
 end
-
 
 AddItem = function(player,itemName, count)
     local xPlayer = GetPlayer(player)
