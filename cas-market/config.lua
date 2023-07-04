@@ -5,6 +5,7 @@ CAS.PedCoords = vector4(467.51, -1189.23, 29.29, 269.08)
 CAS.CompleteText = "Your order is complete, please check your inventory."
 CAS.PedHash = "csb_grove_str_dlr"
 CAS.DrawText = "Open Market"
+CAS.Ped = nil
 CAS.DrawDistance = 3
 CAS.Items = {
     ["weapon_pistol"] = {
