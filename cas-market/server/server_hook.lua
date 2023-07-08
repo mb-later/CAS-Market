@@ -13,6 +13,7 @@ GetPlayer = function(playerId)
     end
 end
 
+
 AddItem = function(player,itemName, count)
     local xPlayer = GetPlayer(player)
     if CAS.Framework == "qb" then
@@ -35,8 +36,18 @@ end
 RemoveMoney = function(source, method, price)
     local player = GetPlayer(source)
     if CAS.Framework == "qb" then
-        return player.Functions.RemoveMoney(method, price)
+        if player.Functions.GetMoney(method) >= price then
+            return player.Functions.RemoveMoney(method, price)
+        else
+            Notify(source, "You don't have enough money.")
+        end
     else
-        return player.removeAccountMoney(method, price)
+        if player.getAccount(method).money >= price then
+            return player.removeAccountMoney(method, price)
+        else
+            Notify(source, "You don't have enough money.")
+        end
     end
 end
+
+
