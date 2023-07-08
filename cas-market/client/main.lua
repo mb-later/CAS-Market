@@ -1,8 +1,9 @@
 
 
 Citizen.CreateThread(function()
+    local pedCoords = CAS.PedCoords
     if CAS.Ped == nil then
-        local pedCoords = CAS.PedCoords
+       
         local pedHash = GetHashKey(CAS.PedHash) 
         RequestModel(pedHash)
         while not HasModelLoaded(pedHash) do
