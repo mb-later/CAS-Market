@@ -37,17 +37,20 @@ RemoveMoney = function(source, method, price)
     local player = GetPlayer(source)
     if CAS.Framework == "qb" then
         if player.Functions.GetMoney(method) >= price then
-            return player.Functions.RemoveMoney(method, price)
+            player.Functions.RemoveMoney(method, price)
+            return true
         else
             Notify(source, "You don't have enough money.")
         end
     else
         if player.getAccount(method).money >= price then
-            return player.removeAccountMoney(method, price)
+            player.removeAccountMoney(method, price)
+            return true
         else
             Notify(source, "You don't have enough money.")
         end
     end
+    return false
 end
 
 
