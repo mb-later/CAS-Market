@@ -8,9 +8,8 @@ local function Content(source,data)
     for i,j in pairs(items) do
         for k in pairs(CAS.Items) do
             if j.name == CAS.Items[k].label then
-                AddItem(source, k, j.count)
-                RemoveMoney(source, method, price)
-                retval = true
+                local checkMoney = RemoveMoney(source, method, price)
+                if checkMoney then AddItem(source, k, j.count) retval = true end
             end
         end
     end
