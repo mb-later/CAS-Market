@@ -9,7 +9,7 @@ Citizen.CreateThread(function()
         while not HasModelLoaded(pedHash) do
             Wait(1)
         end
-        CAS.Ped = CreatePed(1, pedHash, pedCoords.x, pedCoords.y, pedCoords.z-0.98, pedCoords.a, true, false)
+        CAS.Ped = CreatePed(1, pedHash, pedCoords.x, pedCoords.y, pedCoords.z-0.98, pedCoords.a, false, false)
 
         SetPedDefaultComponentVariation(ped)
         SetPedRandomProps(ped)
@@ -23,7 +23,7 @@ Citizen.CreateThread(function()
         local sleep = 750
         local ped = PlayerPedId()
         local coords = GetEntityCoords(ped)
-        local distance = #(coords - vector3(467.51, -1189.23, 29.29))
+        local distance = #(coords - vector3(pedCoords.x, pedCoords.y, pedCoords.z))
         if distance < CAS.DrawDistance then
             sleep = 0
             DrawText3D(pedCoords.x, pedCoords.y, pedCoords.z+0.90, "[E] "..CAS.DrawText)
