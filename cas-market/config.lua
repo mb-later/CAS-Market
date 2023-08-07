@@ -1,7 +1,11 @@
 
 CAS = {}
 CAS.Framework = "qb"
-CAS.PedCoords = vector4(467.51, -1189.23, 29.29, 269.08)
+CAS.PedCoords = {
+    vector4(467.51, -1189.23, 29.29, 269.08),
+    vector4(13.7696, -1122.7605, 28.7663, 154.1191),
+    -- Add more coordinates as needed
+}
 CAS.CompleteText = "Your order is complete, please check your inventory."
 CAS.PedHash = "csb_grove_str_dlr"
 CAS.DrawText = "Open Market"
