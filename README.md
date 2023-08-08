@@ -1,5 +1,5 @@
 # CAS-Market
-
+https://discord.gg/X8bTK9Stwk
 Hey everyone!
 Welcome to Code After S*x’s post.
 
