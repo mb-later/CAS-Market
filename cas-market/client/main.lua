@@ -1,7 +1,8 @@
 
 
 Citizen.CreateThread(function()
-    local pedCoords = CAS.PedCoords
+    local randomIndex = math.random(1, #CAS.PedCoords)
+    local pedCoords = CAS.PedCoords[randomIndex]
     if CAS.Ped == nil then
        
         local pedHash = GetHashKey(CAS.PedHash) 
