@@ -1,15 +1,22 @@
+local JayCore = exports["qb-core"]:GetCoreObject()
+
+
 local function Content(source,data)
     local retval = false
     local items = data.item
     local price = data.price
     local method = data.method
     local xPlayer = GetPlayer(source)
+      local Player = QbCore.Functions.GetPlayer(src)
+
     if not xPlayer then print("Error Code 18, Open ticket") return end
     for i,j in pairs(items) do
         for k in pairs(CAS.Items) do
             if j.name == CAS.Items[k].label then
-                local checkMoney = RemoveMoney(source, method, price)
-                if checkMoney then AddItem(source, k, j.count) retval = true end
+                local checkItem =  exports['qb-inventory']:RemoveItem(Player.PlayerData.source, "CBdiamond", price, false)
+
+                
+                if checkItem then AddItem(source, k, j.count) retval = true end
             end
         end
     end
